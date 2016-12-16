@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG Clock</title>
+  </head>
+
+<body>    
+<style>
+  line {
+  stroke-width: 3px;
+  stroke: black;
+  }      
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" >
+	<g>
+    	<circle id="circle" style="stroke: black; fill: #f8f8f8;" cx="100" cy="100" r="100"/>
+    	<line id="hour0" x1="100" y1="10"  x2="100" y2="0"/>
+    	<line id="hour1" x1="150" y1="13"  x2="145" y2="22"/>
+    	<line id="hour2" x1="187" y1="50"  x2="178" y2="55"/>
+    	<line id="hour3" x1="190" y1="100" x2="200" y2="100"/>
+    	<line id="hour4" x1="187" y1="150" x2="178" y2="145"/>
+    	<line id="hour5" x1="150" y1="187" x2="145" y2="178"/>
+    	<line id="hour6" x1="100" y1="190" x2="100" y2="200"/>
+    	<line id="hour7" x1="50"  y1="187" x2="55"  y2="178"/>
+    	<line id="hour8" x1="13"  y1="150" x2="22"  y2="145"/>
+    	<line id="hour9" x1="0"   y1="100" x2="10"  y2="100"/>
+    	<line id="hour10" x1="13"  y1="50"  x2="22"  y2="55"/>
+    	<line id="hour11" x1="50"  y1="13"  x2="55"  y2="22"/>
+	</g>
+	<g>
+    	<line x1="100" y1="100" x2="100" y2="45" style="stroke-width: 6px; stroke: green;" id="hourhand"/>
+    	<line x1="100" y1="100" x2="100" y2="15" style="stroke-width: 4px; stroke: blue;"  id="minutehand"/>
+    	<line x1="100" y1="100" x2="100" y2="5"  style="stroke-width: 2px; stroke: red;"   id="secondhand"/>
+	</g>
+      </svg>
+    </div>
+
+<script>
+	var CLOCK = (function() {
+		var r = 100;
+		var secH = document.getElementById("secondhand");
+		var minH = document.getElementById("minutehand");
+		var hourH = document.getElementById("hourhand");
+		var drawHands = function() {
+			var SECONDS_HAND_SIZE = 0.95,
+				MINUTES_HAND_SIZE = 0.85,
+				HOURS_HAND_SIZE = 0.45;			
+			var currentTime = new Date();
+
+			drawHand(secH, currentTime.getSeconds(), SECONDS_HAND_SIZE, 6);
+			drawHand(minH, currentTime.getMinutes(), MINUTES_HAND_SIZE, 6);
+			drawHand(hourH, currentTime.getHours(), HOURS_HAND_SIZE, 30);
+			
+			function drawHand(hand, value, size, degrees) {
+				var deg = degrees * value;
+				x2 = getX(deg, r, size),
+				y2 = getY(deg, r, size);
+				
+				hand.setAttribute('x2', x2);
+				hand.setAttribute('y2', y2); 
+			}
+		};
+		    
+		function getX(degrees, r, adjust) { 
+			adj = adjust || 1;
+			return r + adj * r * Math.cos(getRad(degrees));
+		}
+		     
+		function getY(degrees, r, adjust) {
+			adj = adjust || 1;
+			return r + adj * r * Math.sin(getRad(degrees));
+		}
+		
+		function getRad(degrees) {
+			var adjust = Math.PI / 2;
+			return (degrees * Math.PI / 180) - adjust;
+		}
+		        
+		return {
+			init: function() {
+				drawHands();
+				setInterval(drawHands, 1000);
+			}
+		};
+	})();
+	CLOCK.init();
+</script>
+</body>
+</html>

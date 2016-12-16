@@ -1,0 +1,5 @@
+<form class="commentForm" action="control/comment.php" method="post">
+	<textarea name="comment" placeholder="Type your comment here" required></textarea>
+	<input type="text" name="news_id" value="<?php echo $_GET["news"] ?>" hidden>
+	<button>Submit</button>
+</form>

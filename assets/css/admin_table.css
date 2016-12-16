@@ -1,0 +1,145 @@
+.table-wrap{
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 100px; 
+}
+
+.table-wrap img{
+    width: 150px;
+    height: 150px;    
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th, td {
+	text-align: left;
+	padding: 15px 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #64ac8f;
+    width: 150px;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;  
+    float:right;  
+    /*margin-top: 20px;*/
+}
+
+button:hover, button:active, button:focus {
+    background: #59a687;
+}
+/* idk */
+
+table tr:nth-child(2n) {
+    background: #f1f9eb; 
+} 
+
+table tr:nth-child(1) {
+    background: #eee; 
+} 
+
+.modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    position: fixed;
+    background: black;
+    background: rgba(0,0,0,0.2);
+}
+
+.modal-content{
+    position: absolute;
+    margin: 10% auto;
+    left: calc(50% - 160px);
+    height: auto;
+    width: 360px;
+}
+
+.form-modal {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form-modal input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form-modal button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #64ac8f;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    
+}
+
+.form-modal button:hover,.form-modal button:active,.form-modal button:focus {
+    background: #59a687;
+}
+
+.add-user-form{
+    padding: 0px 0px 50px;
+}
+
+.modal span{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: block;
+    float: right;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.modal span:hover{
+    background: black;
+    background: rgba(0,0,0,0.2);
+}
+
+.table-wrap .table-button{
+    width: 16px;
+    height: 16px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.table-wrap .table-button:hover{
+    opacity: 0.8;
+}
+
+.wrong{
+    border-bottom: 2px solid #ff3333;
+}

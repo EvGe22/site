@@ -1,0 +1,117 @@
+<div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 50.006643, lng: 36.229838};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru,
+          styles: [
+                    {
+                      "featureType": "administrative",
+                      "elementType": "labels.text.fill",
+                      "stylers": [
+                        {
+                          "color": "#6467d7"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "landscape",
+                      "elementType": "geometry.fill",
+                      "stylers": [
+                        {
+                          "color": "#efefef"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "poi",
+                      "elementType": "geometry.fill",
+                      "stylers": [
+                        {
+                          "color": "#bfddd1"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "poi",
+                      "elementType": "labels.text.fill",
+                      "stylers": [
+                        {
+                          "color": "#0d0d0d"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "road",
+                      "elementType": "labels.text.fill",
+                      "stylers": [
+                        {
+                          "color": "#0d0d0d"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "poi",
+                      "elementType": "labels.text.stroke",
+                      "stylers": [
+                        {
+                          "color": "#f1f1f1"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "road",
+                      "elementType": "labels.text.stroke",
+                      "stylers": [
+                        {
+                          "color": "#f1f1f1"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "road.highway",
+                      "elementType": "geometry.fill",
+                      "stylers": [
+                        {
+                          "color": "#9ecbb9"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "road.highway",
+                      "elementType": "geometry.stroke",
+                      "stylers": [
+                        {
+                          "color": "#72927e"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "transit",
+                      "elementType": "labels.text.fill",
+                      "stylers": [
+                        {
+                          "color": "#0d0d0d"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "transit",
+                      "elementType": "labels.text.stroke",
+                      "stylers": [
+                        {
+                          "color": "#f1f1f1"
+                        }
+                      ]
+                    }
+                  ]                  
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkIhDm5mKlys1heqv5NskaMP9NN3_fuIU&callback=initMap">
+    </script>

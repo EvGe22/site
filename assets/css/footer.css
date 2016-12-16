@@ -1,0 +1,38 @@
+footer {
+	background: #f1f9eb;
+	min-height: 100px;
+	display: flex;
+    flex-flow: row;
+    justify-content: center; 
+    align-content: center;
+    align-items:center;   
+    margin-top: 50px;
+}
+
+footer li{
+    display: inline;
+    margin: 0px;
+}
+
+footer ul{
+	order:2;
+	margin-right: 40px;
+}
+
+.social-link {
+	width: 25px;
+	height: 25px;
+	margin: 0 10px;
+}
+
+.social-link:hover {
+	opacity: .7;
+}
+
+.copyright{
+	margin-left: 40px;
+	flex: 1 1 auto;
+	font-size: 13pt;
+	color: #a6a6a6;
+}
+
